@@ -9,29 +9,16 @@
     <p>No cheeses yet to delete!</p>
 }
 
-<!--
-<form method="post">
-    <select name="name">
-        @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
-        {
-            <option value=@cheese.Key>@cheese.Key</option>
-        }
-    </select>
-
-    <input type="submit" value="Delete Cheese" />
-</form>
-    
--->
 
     <form method="post">
         <ul>
            
-            @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
+            @foreach (Cheese cheese in ViewBag.cheeses)
             {
                 <li>
-                    @cheese.Key
-                    <input name="cheese" value=@cheese.Key type="checkbox">
-                    <p>@cheese.Value</p>
+                    @cheese.Name
+                    <input name="cheeseToDelete" value=@cheese.Name type="checkbox">
+                    <p>@cheese.Description</p>
                 </li>
                 
 
